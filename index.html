@@ -21,22 +21,22 @@
     .hero img { height: clamp(120px, 9.5vw, 195px); object-fit: cover; object-position: center; }
     @media (max-width: 767px) and (orientation: portrait) {
       .hero img { height: clamp(220px, 78vw, 400px); object-fit: cover; }
-      main { margin-top: 28px; }
+      main { margin-top: 22px; }
     }
     @media (max-width: 1100px) and (orientation: landscape) {
-      .hero img { height: clamp(105px, 14vw, 165px); }
+      .hero img { height: clamp(145px, 19vw, 225px); object-fit: contain; background: #071632; }
     }
 
     main {
       max-width: 1000px;
-      margin: 45px auto;
+      margin: 25px auto;
       padding: 0 20px;
     }
 
     .ressource {
       display: block;
       max-width: 450px;
-      margin-top: 0;
+      margin: 0 auto;
       padding: 25px;
       background: white;
       border: 1px solid #dbe2ea;
@@ -67,12 +67,6 @@
       font-weight: bold;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #64748b;
-      font-size: 0.85rem;
-    }
   </style>
 </head>
 <body>
@@ -99,10 +93,6 @@
       <span class="acces">Accéder au manuel →</span>
     </a>
   </main>
-
-  <footer>
-    Bac Pro CIEL - Portail pédagogique
-  </footer>
 
 </body>
 </html>
