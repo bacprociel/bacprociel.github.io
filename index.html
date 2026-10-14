@@ -18,23 +18,13 @@
     header { background: #071632; color: white; text-align: center; }
     .hero { position: relative; width: 100%; overflow: hidden; background: #071632; }
     .hero picture, .hero img { display: block; width: 100%; }
-    .hero img { height: clamp(150px, 12vw, 245px); object-fit: cover; object-position: center; }
-    .hero-title { position: absolute; left: 5%; top: 50%; transform: translateY(-50%); text-align: left; max-width: 62%; text-shadow: 0 3px 12px #030c2b; }
-    .hero-title h1 { margin: 0; font-size: clamp(2.8rem, 5.8vw, 6.5rem); line-height: .95; color: #fff; -webkit-text-stroke: 1px #18d6ff; }
-    .hero-title p { margin: 10px 0 0; font-size: clamp(.7rem, 1.1vw, 1.15rem); font-weight: bold; line-height: 1.25; }
-    .hero-title p span { display: block; }
-    .hero-subtitle { background: #102c55; padding: 12px 20px; font-size: clamp(.9rem, 1.5vw, 1.1rem); }
+    .hero img { height: clamp(120px, 9.5vw, 195px); object-fit: cover; object-position: center; }
     @media (max-width: 767px) and (orientation: portrait) {
-      .hero img { height: clamp(240px, 83vw, 440px); object-fit: cover; }
-      .hero-title { left: 5%; top: 47%; bottom: auto; transform: translateY(-50%); max-width: 72%; }
-      .hero-title h1 { font-size: clamp(2.7rem, 13vw, 5rem); }
-      .hero-title p { font-size: clamp(.64rem, 2.7vw, .95rem); }
+      .hero img { height: clamp(220px, 78vw, 400px); object-fit: cover; }
       main { margin-top: 28px; }
     }
     @media (max-width: 1100px) and (orientation: landscape) {
-      .hero img { height: clamp(120px, 17vw, 205px); }
-      .hero-title h1 { font-size: clamp(2.3rem, 6vw, 5rem); }
-      .hero-title p { font-size: clamp(.62rem, 1.5vw, 1rem); }
+      .hero img { height: clamp(105px, 14vw, 165px); }
     }
 
     main {
@@ -43,12 +33,10 @@
       padding: 0 20px;
     }
 
-    h2 { font-size: 1.4rem; }
-
     .ressource {
       display: block;
       max-width: 450px;
-      margin-top: 25px;
+      margin-top: 0;
       padding: 25px;
       background: white;
       border: 1px solid #dbe2ea;
@@ -96,17 +84,10 @@
         <source media="(max-width: 1100px) and (orientation: landscape)" srcset="assets/bandeau-paysage.webp">
         <img src="assets/bandeau-pc.webp" alt="Univers technologique CIEL : réseaux, électronique et robotique" width="1600" height="160">
       </picture>
-      <div class="hero-title">
-        <h1>CIEL</h1>
-        <p><span>CYBERSÉCURITÉ</span><span>INFORMATIQUE ET RÉSEAUX</span><span>ÉLECTRONIQUE</span></p>
-      </div>
     </div>
-    <div class="hero-subtitle">Bac Pro CIEL - Ressources pédagogiques interactives</div>
   </header>
 
   <main>
-    <h2>Réseaux informatiques</h2>
-
     <a class="ressource"
        href="https://chaoli22000bzh.github.io/Manuel-Adressage-IPv4/">
       <h3>Manuel d'adressage IPv4</h3>
