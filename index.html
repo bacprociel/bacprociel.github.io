@@ -15,21 +15,26 @@
       color: #1e293b;
     }
 
-    header {
-      background: #17365d;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
+    header { background: #071632; color: white; text-align: center; }
+    .hero { position: relative; width: 100%; overflow: hidden; background: #071632; }
+    .hero picture, .hero img { display: block; width: 100%; }
+    .hero img { height: clamp(230px, 27vw, 470px); object-fit: cover; object-position: center; }
+    .hero-title { position: absolute; left: clamp(18px, 5vw, 100px); top: 50%; transform: translateY(-50%); text-align: left; max-width: 55%; text-shadow: 0 3px 18px #030c2b; }
+    .hero-title h1 { margin: 0; font-size: clamp(3.2rem, 8vw, 8rem); letter-spacing: .025em; line-height: .95; color: #fff; -webkit-text-stroke: 1px #18d6ff; }
+    .hero-title p { margin: 14px 0 0; font-size: clamp(.78rem, 1.65vw, 1.55rem); font-weight: bold; line-height: 1.4; }
+    .hero-title p span { display: block; }
+    .hero-subtitle { background: #102c55; padding: 12px 20px; font-size: clamp(.9rem, 1.5vw, 1.1rem); }
+    @media (max-width: 767px) and (orientation: portrait) {
+      .hero img { height: min(96vw, 520px); object-fit: cover; }
+      .hero-title { left: 6%; top: auto; bottom: 6%; transform: none; max-width: 90%; }
+      .hero-title h1 { font-size: clamp(3.3rem, 17vw, 6rem); }
+      .hero-title p { font-size: clamp(.76rem, 3.3vw, 1.1rem); }
+      main { margin-top: 28px; }
     }
-
-    header h1 {
-      margin: 0 0 8px;
-      font-size: 2rem;
-    }
-
-    header p {
-      margin: 0;
-      opacity: 0.85;
+    @media (max-height: 550px) and (orientation: landscape) {
+      .hero img { height: min(52vh, 300px); min-height: 155px; }
+      .hero-title h1 { font-size: clamp(2.6rem, 9vh, 5rem); }
+      .hero-title p { font-size: clamp(.65rem, 2.8vh, 1rem); }
     }
 
     main {
@@ -85,8 +90,18 @@
 <body>
 
   <header>
-    <h1>Bac Pro CIEL</h1>
-    <p>Ressources pédagogiques interactives</p>
+    <div class="hero">
+      <picture>
+        <source media="(max-width: 767px) and (orientation: portrait)" srcset="assets/bandeau-mobile-portrait.svg">
+        <source media="(max-width: 1100px) and (orientation: landscape)" srcset="assets/bandeau-mobile-paysage.svg">
+        <img src="assets/bandeau-pc.svg" alt="Univers technologique CIEL : réseaux, électronique et robotique" width="1920" height="520">
+      </picture>
+      <div class="hero-title">
+        <h1>CIEL</h1>
+        <p><span>CYBERSÉCURITÉ</span><span>INFORMATIQUE ET RÉSEAUX</span><span>ÉLECTRONIQUE</span></p>
+      </div>
+    </div>
+    <div class="hero-subtitle">Bac Pro CIEL - Ressources pédagogiques interactives</div>
   </header>
 
   <main>
