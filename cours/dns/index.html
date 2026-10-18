@@ -55,4 +55,19 @@ const mode=document.getElementById('mode'),cours=document.getElementById('cours'
 mode.addEventListener('click',()=>{const active=document.documentElement.classList.toggle('presentation');mode.textContent=active?'Quitter la présentation':'Mode présentation';mode.setAttribute('aria-pressed',String(active));});
 form.addEventListener('submit',e=>{e.preventDefault();const value=new FormData(form).get('reponse');feedback.textContent=!value?'Choisis une réponse.':value==='b'?'Bravo ! Le DNS permet de retrouver une adresse IP à partir d’un nom.':'Pas encore. Relis le rôle du DNS, puis essaie à nouveau.'});
 document.getElementById('reset').addEventListener('click',()=>{form.reset();feedback.textContent=''});
+
+const dnsInitial={site:"192.0.2.10",www:"athenyx.net",mail:"192.0.2.20",mx:"10 mail.athenyx.net"};
+let dnsZone={...dnsInitial};
+const dnsNames={site:"athenyx.net",www:"www",mail:"mail",mx:"athenyx.net"};
+const dnsTypes={site:"A",www:"CNAME",mail:"A",mx:"MX"};
+const dnsChoices={site:["192.0.2.10","192.0.2.30","192.0.2.50"],www:["athenyx.net","mail.athenyx.net","serveur-inconnu.athenyx.net"],mail:["192.0.2.20","192.0.2.40","192.0.2.50"],mx:["10 mail.athenyx.net","10 www.athenyx.net","10 serveur-inconnu.athenyx.net"]};
+const dnsRows=document.getElementById("dns-records"),dnsResult=document.getElementById("dns-result"),dnsStatus=document.getElementById("dns-status"),dnsEdit=document.getElementById("dns-edit"),dnsValue=document.getElementById("dns-value");
+function dnsRender(){dnsRows.replaceChildren(...["site","www","mail","mx"].map(k=>{const tr=document.createElement("tr");for(const v of [dnsNames[k],dnsTypes[k],dnsZone[k]]){const td=document.createElement("td");td.textContent=v;tr.appendChild(td)}return tr}))}
+function dnsOptions(){dnsValue.replaceChildren(...dnsChoices[dnsEdit.value].map(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;return o}));dnsValue.value=dnsZone[dnsEdit.value]}
+function dnsLookup(name,seen=[]){if(seen.includes(name))return null;if(name==="athenyx.net")return dnsZone.site;if(name==="mail.athenyx.net")return dnsZone.mail;if(name==="www.athenyx.net")return dnsLookup(dnsZone.www,[...seen,name]);return null}
+document.getElementById("dns-test").addEventListener("click",()=>{const q=document.getElementById("dns-query").value;if(q==="mx"){const target=dnsZone.mx.replace(/^\d+\s+/,"");const ip=dnsLookup(target);dnsResult.textContent="MX : "+dnsZone.mx+(ip?" | Adresse du serveur : "+ip:" | Attention : aucune adresse IPv4 connue pour ce serveur dans la zone simulée.");return}const name=q==="site"?"athenyx.net":q==="mail"?"mail.athenyx.net":"www.athenyx.net";const ip=dnsLookup(name);dnsResult.textContent=ip?"Réponse A pour "+name+" : "+ip+(q==="www"?" (via CNAME vers "+dnsZone.www+")":""):"Aucune réponse A trouvée pour "+name+" dans cette zone simulée."});
+dnsEdit.addEventListener("change",dnsOptions);
+document.getElementById("dns-save").addEventListener("click",()=>{dnsZone[dnsEdit.value]=dnsValue.value;dnsRender();dnsResult.textContent="Zone modifiée. Relance une requête pour observer le résultat.";dnsStatus.textContent="Modification appliquée au serveur virtuel.";});
+document.getElementById("dns-reset").addEventListener("click",()=>{dnsZone={...dnsInitial};dnsRender();dnsOptions();dnsResult.textContent="Zone initiale restaurée. Lance une requête.";dnsStatus.textContent="Tous les enregistrements ont été réinitialisés.";});
+dnsRender();dnsOptions();
 </script><div class="version-fixe" aria-label="Version du cours">V0.3</div></body></html>
