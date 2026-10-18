@@ -40,17 +40,19 @@ a:not(.link){color:#8dc1ff}
 <header><h1>DNS</h1><p>Cours interactif - Terminale Bac Pro CIEL</p></header>
 <main>
 <div class="toolbar"><button type="button" id="mode" aria-pressed="false">Mode présentation</button><a class="link secondary" href="https://bacprociel.github.io/">Retour au portail CIEL</a></div>
-<section class="panel intro"><strong>Prototype V0.3.8</strong><p>Structure des huit chapitres en place. Le premier exercice est fonctionnel ; les prochaines animations et activités sont à développer progressivement.</p></section>
+<section class="panel intro"><strong>Prototype V0.3.9</strong><p>Structure des huit chapitres en place. Le premier exercice est fonctionnel ; les prochaines animations et activités sont à développer progressivement.</p></section>
 <section class="panel qr-panel"><div class="qr"><img alt="QR code vers le cours DNS sur le portail CIEL" width="132" height="132" src="https://api.qrserver.com/v1/create-qr-code/?size=264x264&amp;format=png&amp;data=https%3A%2F%2Fbacprociel.github.io%2Fcours%2Fdns%2F"><p><strong>Retrouver ce cours sur smartphone</strong><br>Adresse : <a href="https://bacprociel.github.io/cours/dns/">bacprociel.github.io/cours/dns/</a><br><small>Le QR code est un raccourci facultatif. Tu peux aussi ouvrir le cours depuis le portail.</small></p></div></section>
 <details id="cours"><summary>1. À quoi sert le DNS ?</summary><div class="inside">
-<p>Le DNS (Domain Name System) permet de retrouver l'adresse IP associée à un nom de site ou de service. Nous pouvons ainsi utiliser des noms faciles à mémoriser plutôt que des adresses IP.</p>
-<div class="example"><strong>Exemple :</strong> le serveur DNS associe le nom <strong>www.athenyx.net</strong> à l'adresse IPv4 <strong>192.0.2.10</strong>.</div>
-<p>Quand un ordinateur souhaite ouvrir un site web, il peut interroger un serveur DNS pour connaître son adresse IP. Il utilise ensuite cette adresse pour contacter le serveur web. Le DNS ne transporte pas les pages du site.</p>
-<details id="exercice" class="nested-exercise"><summary>Je teste mes connaissances</summary><div class="inside"><form id="quiz"><fieldset><legend>Lorsque tu ouvres un site web, quel rôle le DNS peut-il jouer ?</legend>
-<label class="choice"><input type="radio" name="reponse" value="a">Vérifier que le serveur web répond avant d'ouvrir le site.</label>
-<label class="choice"><input type="radio" name="reponse" value="b">Retrouver l'adresse IP associée au nom du site.</label>
-<label class="choice"><input type="radio" name="reponse" value="c">Établir lui-même la connexion entre le navigateur et le serveur web.</label>
-<label class="choice"><input type="radio" name="reponse" value="d">Fournir directement au navigateur le contenu de la page web.</label>
+<p>Le DNS (Domain Name System) permet à un ordinateur de trouver l'adresse IP associée à un nom.</p>
+<p>Grâce au DNS, nous utilisons des noms faciles à retenir plutôt que des adresses IP.</p>
+<div class="example"><strong>Exemple sur Internet :</strong><p>Le serveur DNS associe le nom <strong>www.athenyx.net</strong> à l'adresse IPv4 <strong>192.0.2.10</strong>.</p><strong>Exemple dans une entreprise :</strong><p>Le serveur DNS peut associer le nom <strong>srv-fichiers.entreprise.local</strong> à l'adresse IPv4 <strong>192.168.1.10</strong>.</p></div>
+<p>Quand ton ordinateur veut contacter un serveur, il peut demander son adresse IP au serveur DNS.</p>
+<p>Le serveur DNS lui répond. Ton ordinateur peut alors contacter le serveur recherché.</p>
+<details id="exercice" class="nested-exercise"><summary>Je me teste</summary><div class="inside"><form id="quiz" autocomplete="off"><fieldset><legend>Lorsque tu ouvres un site web, quel rôle le DNS joue-t-il ?</legend>
+<label class="choice"><input type="radio" name="reponse" value="a">Il vérifie que le serveur web est disponible.</label>
+<label class="choice"><input type="radio" name="reponse" value="b">Il recherche l'adresse IP associée au nom du site web.</label>
+<label class="choice"><input type="radio" name="reponse" value="c">Il établit la connexion entre ton ordinateur et le serveur web.</label>
+<label class="choice"><input type="radio" name="reponse" value="d">Il transmet le contenu du site web à ton navigateur.</label>
 </fieldset><button type="submit">Vérifier ma réponse</button><p class="feedback" id="feedback" role="status" aria-live="polite" hidden></p></form></div></details>
 </div></details>
 <details id="chapitre-2"><summary>2. Fonctionnement simplifié du DNS</summary><div class="inside"><p>Le PC demande au serveur DNS une information associée à un nom. Le serveur renvoie une réponse, par exemple une adresse IP.</p><div class="example">PC → Requête DNS → Serveur DNS<br>PC ← Réponse DNS ← Serveur DNS</div><p>Le DNS ne transporte pas les pages web : il aide le PC à trouver le service demandé.</p></div></details>
@@ -70,10 +72,12 @@ a:not(.link){color:#8dc1ff}
 <details id="chapitre-6"><summary>6. DNS et cybersécurité</summary><div class="inside"><p>Une mauvaise configuration ou une modification malveillante des réponses DNS peut rediriger l'utilisateur vers un faux service ou rendre un site inaccessible.</p><div class="example">Exemple : le nom d'un site pointe vers une mauvaise adresse IP.</div><p>Parmi les risques : détournement DNS, hameçonnage, vol d'identifiants et interruption de services. Les protections de messagerie SPF, DKIM et DMARC seront approfondies dans le cours sur la messagerie.</p></div></details>
 <details id="chapitre-7"><summary>7. Reverse DNS (PTR)</summary><div class="inside"><p>La résolution inverse sert à rechercher un nom à partir d'une adresse IP. Elle utilise un enregistrement <strong>PTR</strong>.</p><div class="example">192.0.2.10<br>↓<br>10.2.0.192.in-addr.arpa<br>↓ (si un PTR existe)<br>athenyx.net</div><p>Pour une adresse IPv4, les quatre nombres sont inversés dans le nom de recherche. La réponse dépend de l'existence et du contenu de l'enregistrement PTR.</p></div></details>
 <details id="chapitre-8"><summary>8. Incidents DNS et diagnostic</summary><div class="inside"><p>En fin de cours, nous étudierons des situations professionnelles : un site joignable par son IP mais pas par son nom, un mauvais enregistrement, un serveur de messagerie introuvable ou un PTR absent.</p><div class="example">Situation : un PC accède à 192.0.2.10, mais n'arrive pas à ouvrir www.athenyx.net. Que faut-il vérifier en premier ?</div><p>Les exercices de diagnostic interactifs seront ajoutés au fur et à mesure. Les commandes telles que <code>nslookup</code> permettront de vérifier la résolution.</p></div></details>
-</main><footer>Prototype DNS V0.3.8 - Bac Pro CIEL</footer>
+</main><footer>Prototype DNS V0.3.9 - Bac Pro CIEL</footer>
 <script>
 const mode=document.getElementById('mode'),cours=document.getElementById('cours'),exercice=document.getElementById('exercice'),form=document.getElementById('quiz'),feedback=document.getElementById('feedback');
 mode.addEventListener('click',()=>{const active=document.documentElement.classList.toggle('presentation');mode.textContent=active?'Quitter la présentation':'Mode présentation';mode.setAttribute('aria-pressed',String(active));});
+form.reset();
+window.addEventListener('pageshow',()=>{form.reset();feedback.hidden=true;feedback.textContent=''});
 form.addEventListener('submit',e=>{e.preventDefault();const value=new FormData(form).get('reponse');feedback.hidden=false;feedback.textContent=!value?'Choisis une réponse.':value==='b'?'Bonne réponse. Le DNS retrouve l’adresse IP associée au nom demandé.':'Ce n’est pas la bonne réponse. Le DNS fournit des informations sur les noms, sans vérifier le serveur ni transmettre la page.';});
 form.addEventListener('change',()=>{feedback.hidden=true;feedback.textContent=''});
 const chapters=[...document.querySelectorAll('main > details')];
@@ -96,4 +100,4 @@ const cell=document.createElement("td"),btn=document.createElement("button");btn
 function dnsLookup(name,seen=[]){if(seen.includes(name))return null;if(name==="athenyx.net")return dnsZone.site;if(name==="mail.athenyx.net")return dnsZone.mail;if(name==="www.athenyx.net")return dnsLookup(dnsZone.www,[...seen,name]);return null}
 function dnsTest(k){if(!dnsResult.hidden&&dnsActiveTest===k){dnsResult.hidden=true;dnsActiveTest=null;return}dnsActiveTest=k;const name=k==="www"?"www.athenyx.net":k==="mail"?"mail.athenyx.net":"athenyx.net",type=dnsTypes[k];let lines=["C:\\> nslookup -type="+type+" "+name,""];if(k==="www"){lines.push(name+".  CNAME  "+dnsZone.www+".");}else if(k==="mx"){lines.push(name+".  MX  "+dnsZone.mx+".");}else{const ip=dnsLookup(name);lines.push(ip?name+".  A  "+ip:"*** Aucun enregistrement A trouvé");}dnsOutput.textContent=lines.join("\n");dnsResult.hidden=false;dnsStatus.textContent=""}
 dnsRender();
-</script><div class="version-fixe" aria-label="Version du cours">V0.3.8</div></body></html>
+</script><div class="version-fixe" aria-label="Version du cours">V0.3.9</div></body></html>
