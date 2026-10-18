@@ -9,6 +9,7 @@
 .presentation body{background:#08182e}.presentation header{padding:10px 18px}.presentation main{max-width:100%;margin:8px auto;padding:0 14px 12px}.presentation .qr-panel,.presentation .intro,.presentation footer{display:none}.presentation details,.presentation .panel{border:0;border-radius:0}.presentation summary{font-size:clamp(30px,4vw,44px)}.presentation details .inside{font-size:clamp(26px,3vw,36px);line-height:1.32}.presentation .example{font-size:clamp(27px,3vw,39px)}.presentation .toolbar{margin:4px 0 9px}.presentation button{font-size:18px}.presentation .choice{font-size:clamp(22px,2.6vw,30px)}.presentation header p{display:none}
 @media(max-width:480px){.panel{padding:15px}summary{padding:15px;font-size:19px}details .inside{padding:15px}.qr img{width:115px;height:115px}button,.link{width:100%;text-align:center}.toolbar>*{flex:1}}
 @media(max-height:620px){.presentation details .inside{padding:10px 16px}.presentation .example{margin:8px 0;padding:9px}}
+.version-fixe{position:fixed;right:10px;bottom:7px;z-index:20;font:11px Arial,sans-serif;color:#64748b;background:rgba(242,246,251,.92);padding:3px 6px;border-radius:5px;pointer-events:none}.presentation .version-fixe{color:#b8c8df;background:#08182e}@media(max-width:480px){.version-fixe{font-size:10px;right:5px;bottom:4px}}
 </style>
 </head>
 <body>
@@ -32,4 +33,4 @@ const mode=document.getElementById('mode'),cours=document.getElementById('cours'
 mode.addEventListener('click',()=>{const active=document.documentElement.classList.toggle('presentation');mode.textContent=active?'Quitter la présentation':'Mode présentation';mode.setAttribute('aria-pressed',String(active));});
 form.addEventListener('submit',e=>{e.preventDefault();const value=new FormData(form).get('reponse');feedback.textContent=!value?'Choisis une réponse.':value==='b'?'Bravo ! Le DNS permet de retrouver une adresse IP à partir d’un nom.':'Pas encore. Relis le rôle du DNS, puis essaie à nouveau.'});
 document.getElementById('reset').addEventListener('click',()=>{form.reset();feedback.textContent=''});
-</script></body></html>
+</script><div class="version-fixe" aria-label="Version du cours">V0.2.1</div></body></html>
