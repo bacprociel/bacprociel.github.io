@@ -142,10 +142,10 @@ nav{background:#081d3c;color:#fff}.nav-inner{max-width:1140px;margin:auto;displa
 .enigma-keyboard button{cursor:pointer;border:3px outset #b6a98e;color:#f2ebd9;background:radial-gradient(circle at 30% 20%,#686359,#252522 80%);box-shadow:0 3px 3px #0009}
 .enigma-keyboard button.pressed,.enigma-keyboard button:active{transform:translateY(3px);background:#765e3e;border-style:inset}
 .enigma-strips{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}.enigma-strips>div{background:#e7d7b1;color:#383124;padding:12px;border-radius:5px;min-width:0}.enigma-strips span{display:block}.enigma-strips strong{display:block;overflow-wrap:anywhere;font:700 clamp(.9rem,1.7vw,1.25rem) ui-monospace,monospace;margin-top:5px}
-.enigma-info{font-size:.87rem;color:#e9d9b6;margin:13px 0}.enigma-final{padding:14px;background:#224e37;border:2px solid #76d79d;border-radius:9px;color:#dbffe5;font-weight:700}.enigma-actions{display:flex;gap:9px;flex-wrap:wrap}.enigma-actions button{cursor:pointer;padding:10px 15px;border-radius:8px;background:#d6bf8c;color:#2d2417;font-weight:800;border:1px solid #edddac}.enigma-actions button:last-child{background:#91d5a5}
+.enigma-info{font-size:.87rem;color:#e9d9b6;margin:13px 0}.enigma-final{padding:19px 20px;background:linear-gradient(120deg,#eee0bc,#d7c39a);border:1px solid #b49b6b;border-radius:3px;color:#3c3021;font:700 1rem Georgia,serif;box-shadow:3px 5px 0 #0005;line-height:1.6}.enigma-final::before{content:"TRANSMISSION DÉCHIFFRÉE · ARCHIVES 1944";display:block;border-bottom:1px solid #9b825d;padding-bottom:8px;margin-bottom:12px;font:700 .72rem system-ui,sans-serif;letter-spacing:.11em;color:#685537}.enigma-actions{display:flex;gap:9px;flex-wrap:wrap}.enigma-actions button{cursor:pointer;padding:10px 15px;border-radius:8px;background:#d6bf8c;color:#2d2417;font-weight:800;border:1px solid #edddac}.enigma-actions button:last-child{background:#91d5a5}
 .enigma-note{color:#c8beaa;font-size:.75rem;line-height:1.5;margin:17px 0 0}
 @media(max-width:650px){.enigma-strips{grid-template-columns:1fr}.enigma-lamps span,.enigma-keyboard button{width:31px;height:31px;font-size:.86rem}.enigma-machine{padding:10px 5px}.enigma-lamps,.enigma-keyboard{gap:5px}}
-.enigma-letter{display:inline-block;padding:1px;border-radius:3px}.enigma-letter.is-done{opacity:.5}.enigma-letter.is-next{background:#297046;color:#fff4ce;box-shadow:0 0 0 2px #297046}\n</style>
+.enigma-letter{display:inline-block;padding:1px;border-radius:3px}.enigma-letter.is-done{opacity:.5}.enigma-letter.is-next{background:transparent;color:#382f27;box-shadow:none;font-weight:900;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}\n</style>
 </head>
 <body>
 <header><div class="hero"><picture><source media="(max-width: 767px) and (orientation: portrait)" srcset="assets/bandeau-portrait.webp"><source media="(max-width: 1100px) and (orientation: landscape)" srcset="assets/bandeau-paysage.webp"><img src="assets/bandeau-pc.webp" alt="Univers technologique du Bac Pro CIEL : réseaux, électronique et robotique" width="1600" height="160"></picture></div></header>
@@ -274,6 +274,6 @@ buttons.forEach(button=>button.addEventListener("click",()=>{const index=Number(
 update();
 })();
 </script>
-<script src="enigma.js?v=2"></script>
+<script src="enigma.js?v=3"></script>
 </body>
 </html>
