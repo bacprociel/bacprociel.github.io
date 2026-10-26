@@ -25,6 +25,9 @@ nav{background:#081d3c;color:#fff}.nav-inner{max-width:1140px;margin:auto;displa
 /* Référentiel et règles d'obtention du diplôme */
 .unit-overview,.bac-rules{margin:24px 0;background:#fff;border:1px solid #dce5f2;border-radius:17px;padding:clamp(15px,2.5vw,24px)}.unit-overview h3,.bac-rules h3{margin:0 0 10px}.unit-overview>p,.bac-rules p{line-height:1.55}.unit-details{border:1px solid #d4e0ed;border-radius:11px;margin:10px 0;overflow:hidden}.unit-details summary{cursor:pointer;display:flex;align-items:center;gap:15px;padding:13px 15px;background:#f1f6fc;list-style-position:inside}.unit-details summary strong{color:#0f57a1;white-space:nowrap}.unit-details summary span{font-weight:700}.unit-details-body{padding:4px 14px 10px}.unit-activity{padding:11px 0;border-bottom:1px solid #e0e6ef}.unit-activity:last-child{border-bottom:0}.unit-activity small{display:block;color:#566982;margin-top:3px}.bac-rules{border-left:5px solid #1772b6}.bac-rules p:last-child{margin-bottom:0}
 
+/* Légende des matières : colonnes souples pour les intitulés longs */
+@media(min-width:1051px){.subject-legend{grid-template-columns:1.1fr 1.1fr .7fr .95fr .7fr 1.55fr;column-gap:8px}.subject-legend span{font-size:.79rem;white-space:nowrap}}
+@media(min-width:651px) and (max-width:1050px){.subject-legend{grid-template-columns:1.15fr 1.15fr .9fr 1.45fr;column-gap:8px}.subject-legend span{font-size:.81rem}}
 /* Légende des matières : deux rangées régulières sur grands écrans, adaptation mobile */
 .subject-legend span{min-width:0}
 @media(max-width:1050px){.subject-legend{grid-template-columns:repeat(4,minmax(0,1fr))}}
