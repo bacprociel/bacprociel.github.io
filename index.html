@@ -145,7 +145,7 @@ nav{background:#081d3c;color:#fff}.nav-inner{max-width:1140px;margin:auto;displa
 .enigma-info{font-size:.87rem;color:#e9d9b6;margin:13px 0}.enigma-final{padding:14px;background:#224e37;border:2px solid #76d79d;border-radius:9px;color:#dbffe5;font-weight:700}.enigma-actions{display:flex;gap:9px;flex-wrap:wrap}.enigma-actions button{cursor:pointer;padding:10px 15px;border-radius:8px;background:#d6bf8c;color:#2d2417;font-weight:800;border:1px solid #edddac}.enigma-actions button:last-child{background:#91d5a5}
 .enigma-note{color:#c8beaa;font-size:.75rem;line-height:1.5;margin:17px 0 0}
 @media(max-width:650px){.enigma-strips{grid-template-columns:1fr}.enigma-lamps span,.enigma-keyboard button{width:31px;height:31px;font-size:.86rem}.enigma-machine{padding:10px 5px}.enigma-lamps,.enigma-keyboard{gap:5px}}
-</style>
+.enigma-letter{display:inline-block;padding:1px;border-radius:3px}.enigma-letter.is-done{opacity:.5}.enigma-letter.is-next{background:#297046;color:#fff4ce;box-shadow:0 0 0 2px #297046}\n</style>
 </head>
 <body>
 <header><div class="hero"><picture><source media="(max-width: 767px) and (orientation: portrait)" srcset="assets/bandeau-portrait.webp"><source media="(max-width: 1100px) and (orientation: landscape)" srcset="assets/bandeau-paysage.webp"><img src="assets/bandeau-pc.webp" alt="Univers technologique du Bac Pro CIEL : réseaux, électronique et robotique" width="1600" height="160"></picture></div></header>
@@ -274,6 +274,6 @@ buttons.forEach(button=>button.addEventListener("click",()=>{const index=Number(
 update();
 })();
 </script>
-<script src="enigma.js"></script>
+<script src="enigma.js?v=2"></script>
 </body>
 </html>
