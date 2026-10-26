@@ -146,6 +146,30 @@ nav{background:#081d3c;color:#fff}.nav-inner{max-width:1140px;margin:auto;displa
 .enigma-note{color:#c8beaa;font-size:.75rem;line-height:1.5;margin:17px 0 0}
 @media(max-width:650px){.enigma-strips{grid-template-columns:1fr}.enigma-lamps span,.enigma-keyboard button{width:31px;height:31px;font-size:.86rem}.enigma-machine{padding:10px 5px}.enigma-lamps,.enigma-keyboard{gap:5px}}
 .enigma-paper strong .enigma-letter{display:inline-block;padding:1px;border-radius:3px;font-size:inherit;letter-spacing:inherit;font-family:inherit;line-height:inherit;font-weight:400}.enigma-letter.is-done{opacity:.5}.enigma-paper strong .enigma-letter.is-next{background:transparent;color:#382f27;box-shadow:none;font-weight:900;font-size:inherit;text-decoration:none}\n.enigma-brand{font-size:clamp(2rem,4vw,2.7rem)}
+
+/* Enigma : coffret électromécanique distinct du pupitre pédagogique. */
+.enigma-lab{display:grid;gap:18px;margin:18px 0;background:transparent;border:0;padding:0;border-radius:0;box-shadow:none;color:inherit}
+.enigma-machine-shell{position:relative;overflow:hidden;background:repeating-linear-gradient(92deg,#382719 0,#46301d 8px,#342315 17px,#47301e 25px);border:9px ridge #755238;border-radius:15px;padding:clamp(9px,2vw,20px);box-shadow:inset 0 0 0 2px #ae8554,inset 0 0 0 7px #211b16,0 14px 24px #0004;color:#eee4cd}
+.enigma-machine-shell:before,.enigma-machine-shell:after{content:"";position:absolute;top:12px;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e5d09c,#77603e 65%,#342719);box-shadow:0 2px 3px #0008}
+.enigma-machine-shell:before{left:13px}.enigma-machine-shell:after{right:13px}
+.enigma-top{padding:4px 18px 3px;color:#c7ac80}.enigma-signal{color:#d7c696}
+.enigma-paper{margin:12px 6px 18px;background:repeating-linear-gradient(0deg,#e7d5ae,#e7d5ae 2px,#eadab7 3px,#e7d5ae 4px);border:1px solid #b19c73;border-radius:2px;box-shadow:2px 5px 8px #0005;transform:rotate(-.15deg)}
+.enigma-machine{position:relative;background:radial-gradient(ellipse at 35% 4%,#514b3e,#25241f 75%);border:5px solid #5b5546;border-radius:11px;box-shadow:inset 0 0 0 2px #8f8264,inset 0 7px 18px #0009,0 2px 0 #c09b65;padding:22px clamp(8px,2vw,24px) 26px}
+.enigma-machine:before,.enigma-machine:after{content:"✣";position:absolute;color:#b39d70;font:17px Georgia,serif;top:11px}.enigma-machine:before{left:12px}.enigma-machine:after{right:12px}
+.enigma-brand{font:700 clamp(2rem,4vw,2.8rem) Georgia,serif;letter-spacing:.25em;color:#d8c69d;text-shadow:0 2px 3px #000,0 0 1px #fff}
+.enigma-rotors>div{min-width:0;background:linear-gradient(90deg,#080907,#27271d 16%,#131510 80%,#060705);border:4px ridge #b2a27c;border-radius:5px;box-shadow:inset 0 0 16px #000,0 2px 4px #0008}
+.enigma-rotors strong{display:block;min-width:1.5em;background:linear-gradient(#dac99e,#f4e8c9 45%,#d0bc8f);color:#272015;border:2px inset #ad956c;border-radius:3px;padding:3px 4px;font:800 clamp(1.4rem,3vw,2rem) Georgia,serif}
+.enigma-lamps span{background:radial-gradient(circle at 45% 35%,#34352b,#141510 75%);border:3px ridge #817357;box-shadow:inset 0 3px 7px #000d,0 1px 2px #b8a17a55;color:#837d68}
+.enigma-lamps span.lit{background:radial-gradient(circle,#fffadd 0%,#f9e6a0 50%,#bd9736);color:#33270f;box-shadow:0 0 10px #ffe794,0 0 26px #eec86788;border-color:#e5c67e}
+.enigma-keyboard{padding-top:16px;border-top:2px solid #514c3e;margin-top:18px}
+.enigma-keyboard button{border:4px ridge #b9aa8e;background:radial-gradient(circle at 37% 25%,#68645b 0%,#242522 70%);box-shadow:inset 0 1px 2px #ddd7ba55,0 5px 2px #0a0b09,0 6px 6px #000a;transition:transform .08s,box-shadow .08s}
+.enigma-keyboard button.pressed,.enigma-keyboard button:active{transform:translateY(3px);box-shadow:inset 0 3px 5px #000,0 2px 2px #0009}
+.enigma-panel{padding:16px;background:#f4ecda;color:#383022;border:1px solid #d4c19c;border-radius:9px;box-shadow:0 3px 9px #0001}
+.enigma-panel .enigma-strips{margin:0 0 14px}.enigma-panel .enigma-strips>div{background:#e7d8b6;border:1px solid #cab58b}
+.enigma-panel .enigma-info{color:#483b29;font-size:.92rem;margin:12px 0}.enigma-panel .enigma-note{color:#6a5a43;margin:15px 0 0}
+.enigma-panel .enigma-actions button{background:#e6d4aa;border:1px solid #baa174;color:#382918}.enigma-panel .enigma-actions button:last-child{background:#d0ddca;border-color:#91a18b}
+.enigma-panel .enigma-final{margin:12px 0}
+@media(max-width:650px){.enigma-machine-shell{border-width:6px;padding:8px}.enigma-machine{padding:16px 5px 23px}.enigma-rotors>div{padding:5px 8px}.enigma-panel{padding:12px}}
 </style>
 </head>
 <body>
@@ -189,8 +213,9 @@ nav{background:#081d3c;color:#fff}.nav-inner{max-width:1140px;margin:auto;displa
 <template id="enigma-template">
 <h3>Mission : décrypter un message avec Enigma</h3><p>Un message mystérieux a été intercepté. Les réglages ont déjà été retrouvés : recopie les lettres et observe la machine déchiffrer le message, lettre après lettre.</p>
 <div class="enigma-lab">
-<div class="enigma-top"><span>STATION DE DÉCHIFFREMENT · 1944</span><span class="enigma-signal">● TRANSMISSION INTERCEPTÉE</span></div>
-<div class="enigma-paper"><span>MESSAGE INTERCEPTÉ · GROUPES DE CINQ</span><strong id="enigma-intercept"></strong></div>
+<div class="enigma-machine-shell">
+<div class="enigma-top"><span>FUNKMELDUNG · 1944</span><span class="enigma-signal">● TRANSMISSION INTERCEPTÉE</span></div>
+<div class="enigma-paper"><span>MESSAGE INTERCEPTÉ</span><strong id="enigma-intercept"></strong></div>
 <div class="enigma-machine">
 <div class="enigma-brand">ENIGMA</div>
 <div class="enigma-rotors" aria-label="Positions des rotors"><div><small>ROTOR I</small><strong id="enigma-rotor-0">A</strong></div><div><small>ROTOR II</small><strong id="enigma-rotor-1">A</strong></div><div><small>ROTOR III</small><strong id="enigma-rotor-2">A</strong></div></div>
@@ -199,10 +224,13 @@ nav{background:#081d3c;color:#fff}.nav-inner{max-width:1140px;margin:auto;displa
 
 <div class="enigma-keyboard" aria-label="Clavier Enigma à utiliser à la souris ou au toucher"></div>
 </div>
+</div>
+<div class="enigma-panel">
 <div class="enigma-strips"><div><span>LETTRES SAISIES</span><strong id="enigma-typed">_____</strong></div><div><span>MESSAGE DÉCHIFFRÉ · BLOCS DE CINQ</span><strong id="enigma-output">EN ATTENTE DE SAISIE</strong></div></div>
 <p class="enigma-info" id="enigma-info" aria-live="polite">Recopie le message intercepté.</p><div id="enigma-final" class="enigma-final" hidden></div>
 <div class="enigma-actions"><button type="button" id="enigma-restart">↻ Recommencer le message</button><button type="button" id="enigma-next">✉ Nouveau message</button></div>
 <p class="enigma-note">Enigma simulée : rotors I, II, III, réflecteur B, bagues A et absence de connexions supplémentaires. Réglages initiaux fournis pour chaque message. Les phrases en français sont fictives, inspirées de l'atmosphère de Radio Londres : les véritables messages personnels étaient diffusés en clair, pas chiffrés avec Enigma.</p>
+</div>
 </div><small>Activités découvertes : chiffrement, traitement de l'information et fonctionnement d'un dispositif historique de cryptographie.</small>
 </template><template id="caesar-template">
 <h3>Mission : chiffrer un message avec César</h3>
