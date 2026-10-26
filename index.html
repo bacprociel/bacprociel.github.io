@@ -145,7 +145,8 @@ nav{background:#081d3c;color:#fff}.nav-inner{max-width:1140px;margin:auto;displa
 .enigma-info{font-size:.87rem;color:#e9d9b6;margin:13px 0}.enigma-final{padding:19px 20px;background:linear-gradient(120deg,#eee0bc,#d7c39a);border:1px solid #b49b6b;border-radius:3px;color:#3c3021;font:700 1rem Georgia,serif;box-shadow:3px 5px 0 #0005;line-height:1.6}.enigma-final::before{content:"TRANSMISSION DÉCHIFFRÉE · ARCHIVES 1944";display:block;border-bottom:1px solid #9b825d;padding-bottom:8px;margin-bottom:12px;font:700 .72rem system-ui,sans-serif;letter-spacing:.11em;color:#685537}.enigma-actions{display:flex;gap:9px;flex-wrap:wrap}.enigma-actions button{cursor:pointer;padding:10px 15px;border-radius:8px;background:#d6bf8c;color:#2d2417;font-weight:800;border:1px solid #edddac}.enigma-actions button:last-child{background:#91d5a5}
 .enigma-note{color:#c8beaa;font-size:.75rem;line-height:1.5;margin:17px 0 0}
 @media(max-width:650px){.enigma-strips{grid-template-columns:1fr}.enigma-lamps span,.enigma-keyboard button{width:31px;height:31px;font-size:.86rem}.enigma-machine{padding:10px 5px}.enigma-lamps,.enigma-keyboard{gap:5px}}
-.enigma-paper strong .enigma-letter{display:inline-block;padding:1px;border-radius:3px;font-size:inherit;letter-spacing:inherit;font-family:inherit;line-height:inherit;font-weight:400}.enigma-letter.is-done{opacity:.5}.enigma-paper strong .enigma-letter.is-next{background:transparent;color:#382f27;box-shadow:none;font-weight:900;font-size:inherit;text-decoration:none}\n</style>
+.enigma-paper strong .enigma-letter{display:inline-block;padding:1px;border-radius:3px;font-size:inherit;letter-spacing:inherit;font-family:inherit;line-height:inherit;font-weight:400}.enigma-letter.is-done{opacity:.5}.enigma-paper strong .enigma-letter.is-next{background:transparent;color:#382f27;box-shadow:none;font-weight:900;font-size:inherit;text-decoration:none}\n.enigma-brand{font-size:clamp(2rem,4vw,2.7rem)}
+</style>
 </head>
 <body>
 <header><div class="hero"><picture><source media="(max-width: 767px) and (orientation: portrait)" srcset="assets/bandeau-portrait.webp"><source media="(max-width: 1100px) and (orientation: landscape)" srcset="assets/bandeau-paysage.webp"><img src="assets/bandeau-pc.webp" alt="Univers technologique du Bac Pro CIEL : réseaux, électronique et robotique" width="1600" height="160"></picture></div></header>
@@ -189,14 +190,14 @@ nav{background:#081d3c;color:#fff}.nav-inner{max-width:1140px;margin:auto;displa
 <h3>Mission : décrypter un message avec Enigma</h3><p>Un message mystérieux a été intercepté. Les réglages ont déjà été retrouvés : recopie les lettres et observe la machine déchiffrer le message, lettre après lettre.</p>
 <div class="enigma-lab">
 <div class="enigma-top"><span>STATION DE DÉCHIFFREMENT · 1944</span><span class="enigma-signal">● TRANSMISSION INTERCEPTÉE</span></div>
-<div class="enigma-paper"><span>MESSAGE INTERCEPTÉ · GROUPES DE CINQ</span><strong id="enigma-intercept"></strong><small id="enigma-progress">0 lettre</small></div>
+<div class="enigma-paper"><span>MESSAGE INTERCEPTÉ · GROUPES DE CINQ</span><strong id="enigma-intercept"></strong></div>
 <div class="enigma-machine">
-<div class="enigma-brand">ENIGMA <small>M3 · SIMULATION PÉDAGOGIQUE</small></div>
+<div class="enigma-brand">ENIGMA</div>
 <div class="enigma-rotors" aria-label="Positions des rotors"><div><small>ROTOR I</small><strong id="enigma-rotor-0">A</strong></div><div><small>ROTOR II</small><strong id="enigma-rotor-1">A</strong></div><div><small>ROTOR III</small><strong id="enigma-rotor-2">A</strong></div></div>
-<div class="enigma-lamp-title">TABLEAU LUMINEUX · LETTRE DÉCHIFFRÉE</div>
+<div class="enigma-lamp-title">LAMPENFELD · TABLEAU LUMINEUX</div>
 <div class="enigma-lamps" aria-label="Tableau lumineux de la machine"></div>
-<div class="enigma-lamp-title">CLAVIER ENIGMA · UTILISE AUSSI TON CLAVIER DE PC</div>
-<div class="enigma-keyboard" tabindex="0" aria-label="Clavier virtuel Enigma"></div>
+
+<div class="enigma-keyboard" aria-label="Clavier Enigma à utiliser à la souris ou au toucher"></div>
 </div>
 <div class="enigma-strips"><div><span>LETTRES SAISIES</span><strong id="enigma-typed">_____</strong></div><div><span>MESSAGE DÉCHIFFRÉ · BLOCS DE CINQ</span><strong id="enigma-output">EN ATTENTE DE SAISIE</strong></div></div>
 <p class="enigma-info" id="enigma-info" aria-live="polite">Recopie le message intercepté.</p><div id="enigma-final" class="enigma-final" hidden></div>
@@ -274,6 +275,6 @@ buttons.forEach(button=>button.addEventListener("click",()=>{const index=Number(
 update();
 })();
 </script>
-<script src="enigma.js?v=3"></script>
+<script src="enigma.js?v=4"></script>
 </body>
 </html>
